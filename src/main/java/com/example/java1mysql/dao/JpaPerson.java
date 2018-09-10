@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface JpaPerson extends JpaRepository<Person,Long> {
+    Person findByPersonCode(String code);
+    void deleteByPersonCode(String code);
 }

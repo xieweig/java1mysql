@@ -1,6 +1,7 @@
 package com.example.java1mysql;
 
 import com.example.java1mysql.dao.JpaPerson;
+import com.example.java1mysql.domain.HomeAddress;
 import com.example.java1mysql.domain.Person;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,10 +17,13 @@ public class Java1mysqlApplicationTests {
     private JpaPerson jpaPerson;
 
     @Test
-    public void contextLoads() {
+    public void test01() {
         Person person = new Person();
         person.setName("zhangsanfeng");
-        person.setAge(23);
+        person.setPersonCode("31212");
+        person.setSex(Person.Sex.female);
+        person.getHomeAddress().setCity("ji_nan");
+        person.getHomeAddress().setProvince(HomeAddress.Province.sichuan);
         jpaPerson.save(person);
     }
 
